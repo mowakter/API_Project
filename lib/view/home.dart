@@ -10,6 +10,7 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   List myProduct = [];
+  //List myProduct = [];
 
   getProduct() async {
     var a = await ProductService().getProductList();
@@ -67,6 +68,7 @@ class _ProductScreenState extends State<ProductScreen> {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
+                                //fontWeight: FontWeight.w600,
                               ),
                             ),
                             Text(
