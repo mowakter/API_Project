@@ -1,5 +1,4 @@
 import 'package:api_project/service/product_list.dart';
-import 'package:api_project/view/data.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatefulWidget {
@@ -14,11 +13,11 @@ class _ProductScreenState extends State<ProductScreen> {
 
   getProduct() async {
     var a = await ProductService().getProductList();
-    myProduct = a;
     // myProduct.clear();
     // await Future.delayed(Duration(seconds: 3));
     // myProduct.addAll(MyData.data);
-    setState(() {});
+    setState(() {
+      myProduct = a;});
   }
 
   @override
@@ -39,6 +38,7 @@ class _ProductScreenState extends State<ProductScreen> {
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: myProduct.length,
+             // itemCount: myProduct.length,
               itemBuilder: (context, index) => Card(
                 child: Row(
                   children: [
@@ -58,6 +58,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       flex: 200,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
+                       // padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -84,6 +85,7 @@ class _ProductScreenState extends State<ProductScreen> {
                             ),
                             Text(
                               "Rating : ${myProduct[index]["rating"]["rate"]}",
+                             // "Rating : ${myProduct[index]["rating"]["rate"]}",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
