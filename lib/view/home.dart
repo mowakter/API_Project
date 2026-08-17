@@ -32,6 +32,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
+       // backgroundColor: Colors.blueAccent,
         title: Text("Product List"),
         centerTitle: true,
       ),
@@ -73,6 +74,7 @@ class _ProductScreenState extends State<ProductScreen> {
                             ),
                             Text(
                               "Category : ${myProduct[index]["category"]}",
+                              //"Category : ${myProduct[index]["category"]}",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
