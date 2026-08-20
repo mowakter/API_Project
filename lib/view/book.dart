@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
 
+import '../service/book_list.dart';
+
 class BookScreen extends StatefulWidget {
-  const BookScreen({super.key});
+   BookScreen({super.key});
 
   @override
   State<BookScreen> createState() => _BookScreenState();
 }
 
 class _BookScreenState extends State<BookScreen> {
+
+  List b = [];
+
+  getBookList() async {
+    var a = await BookService().getBookList();
+    b.clear();
+    b.addAll(a);
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    getBookList();
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +40,9 @@ class _BookScreenState extends State<BookScreen> {
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          childAspectRatio: 1.3,
+          childAspectRatio: 1.1,
         ),
+        itemCount: b.length,
         itemBuilder: (context, index) => Card(
           elevation: 3,
           child: Padding(
@@ -35,47 +55,51 @@ class _BookScreenState extends State<BookScreen> {
                   children: [
                     Icon(Icons.menu_book, size: 20),
                     Text(
-                      "# id",
+                      "# ${b[index]["id"]}",
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
                 SizedBox(height: 8),
                 Text(
-                  "title",
+                  "${b[index]["title"]}",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 10),
                 Row(
                   children: [
                     Icon(Icons.description, size: 20),
                     SizedBox(width: 5),
                     Text(
-                      "pageCount",
+                      "${b[index]["pageCount"]}",
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 10),
                   ],
                 ),
                 Row(
                   children: [
                     Icon(Icons.person_2_outlined, size: 20),
                     SizedBox(width: 5),
-                    Text(
-                      "authors",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    Expanded(
+                      child: Text(
+                        "${b[index]["authors"]}",
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 20),
                 Center(
                     child: ElevatedButton(
                       onPressed: (){},
                       child: Text(
                         "View More",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
+                        style: TextStyle(color: Colors.black87, fontSize: 12),
                       ),)
                 ),
               ],
