@@ -49,13 +49,11 @@ class _BookScreenState extends State<BookScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-             // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.menu_book, size: 20),
-                   // Icon(Icons.menu_book, size: 20),
                     Text(
                       "# ${b[index]["id"]}",
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
