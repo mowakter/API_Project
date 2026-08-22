@@ -41,10 +41,8 @@ class _CountriesState extends State<Countries> {
       ),
       body: ListView.builder(
         itemCount: cl.length,
-        // itemCount: cl.length,
         itemBuilder: (c, i) => ListTile(
           title: Text("${cl[i]["name"]}"),
-         // title: Text("${cl[i]["name"]}"),
           subtitle: Text("${cl[i]["admissionDateUnitedNations"]}"),
         ),
       ),
