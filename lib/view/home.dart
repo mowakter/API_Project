@@ -1,4 +1,5 @@
 import 'package:api_project/service/product_list.dart';
+import 'package:api_project/view/custom_widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatefulWidget {
@@ -32,7 +33,6 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-       // backgroundColor: Colors.blueAccent,
         title: Text("Product List"),
         centerTitle: true,
       ),
@@ -40,7 +40,6 @@ class _ProductScreenState extends State<ProductScreen> {
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: myProduct.length,
-             // itemCount: myProduct.length,
               itemBuilder: (context, index) => Card(
                 child: Row(
                   children: [
@@ -60,21 +59,12 @@ class _ProductScreenState extends State<ProductScreen> {
                       flex: 200,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                       // padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "${myProduct[index]["title"]}",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                                //fontWeight: FontWeight.w600,
-                              ),
-                            ),
+                            CustomText(text: "${myProduct[index]["title"]}",fSize: 15,fWeight: FontWeight.w600,),
                             Text(
                               "Category : ${myProduct[index]["category"]}",
-                              //"Category : ${myProduct[index]["category"]}",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -89,7 +79,6 @@ class _ProductScreenState extends State<ProductScreen> {
                             ),
                             Text(
                               "Rating : ${myProduct[index]["rating"]["rate"]}",
-                             // "Rating : ${myProduct[index]["rating"]["rate"]}",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
