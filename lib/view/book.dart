@@ -1,3 +1,4 @@
+import 'package:api_project/view/custom_widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 import '../service/book_list.dart';
@@ -54,10 +55,11 @@ class _BookScreenState extends State<BookScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.menu_book, size: 20),
-                    Text(
-                      "# ${b[index]["id"]}",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
+                    CustomText(text: "# ${b[index]["id"]}")
+                    // Text(
+                    //   "# ${b[index]["id"]}",
+                    //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    // ),
                   ],
                 ),
                 SizedBox(height: 8),
