@@ -69,12 +69,10 @@ class _BookScreenState extends State<BookScreen> {
                   children: [
                     Icon(Icons.description, size: 20),
                     SizedBox(width: 5),
-                    Text(
-                      "${b[index]["pageCount"]}",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    CustomText(
+                      text: "${b[index]["pageCount"]}",
+                      fSize: 18,
+                      fWeight: FontWeight.bold,
                     ),
                     SizedBox(height: 10),
                   ],
