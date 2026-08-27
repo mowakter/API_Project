@@ -56,19 +56,15 @@ class _BookScreenState extends State<BookScreen> {
                   children: [
                     Icon(Icons.menu_book, size: 20),
                     CustomText(text: "# ${b[index]["id"]}")
-                    // Text(
-                    //   "# ${b[index]["id"]}",
-                    //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    // ),
                   ],
                 ),
                 SizedBox(height: 8),
-                Text(
-                  "${b[index]["title"]}",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
+                // Text(
+                //   "${b[index]["title"]}",
+                //   maxLines: 2,
+                //   overflow: TextOverflow.ellipsis,
+                //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                // ),
                 SizedBox(height: 10),
                 Row(
                   children: [
