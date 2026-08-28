@@ -96,9 +96,10 @@ class _BookScreenState extends State<BookScreen> {
                 Center(
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      "View More",
-                      style: TextStyle(color: Colors.black87, fontSize: 12),
+                    child: CustomText(
+                      text: "View More",
+                      fSize: 12,
+                      color: Colors.black87,
                     ),
                   ),
                 ),
