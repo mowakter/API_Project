@@ -31,7 +31,7 @@ class _BookScreenState extends State<BookScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text("Book - ${b.length}"),
+        title: CustomText(text: "Book - ${b.length}", fSize: 20),
         centerTitle: true,
       ),
       body: GridView.builder(
