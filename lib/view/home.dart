@@ -18,7 +18,8 @@ class _ProductScreenState extends State<ProductScreen> {
     // await Future.delayed(Duration(seconds: 3));
     // myProduct.addAll(MyData.data);
     setState(() {
-      myProduct = a;});
+      myProduct = a;
+    });
   }
 
   @override
@@ -61,13 +62,16 @@ class _ProductScreenState extends State<ProductScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CustomText(text: "${myProduct[index]["title"]}",fSize: 15,fWeight: FontWeight.w600,),
-                            Text(
-                              "Category : ${myProduct[index]["category"]}",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                              ),
+                            CustomText(
+                              text: "${myProduct[index]["title"]}",
+                              fSize: 15,
+                              fWeight: FontWeight.w600,
+                            ),
+                            CustomText(
+                              text:
+                                  "Category : ${myProduct[index]["category"]}",
+                              fSize: 15,
+                              fWeight: FontWeight.w600,
                             ),
                             Text(
                               "Price : ${myProduct[index]["price"]}",
