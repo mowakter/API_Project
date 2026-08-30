@@ -1,4 +1,5 @@
 import 'package:api_project/service/countries.dart';
+import 'package:api_project/view/custom_widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class Countries extends StatefulWidget {
@@ -28,7 +29,7 @@ class _CountriesState extends State<Countries> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Countries - ${cl.length}"),
+        title: CustomText(text: "Countries - ${cl.length}"),
         centerTitle: true,
         actions: [
           IconButton(
