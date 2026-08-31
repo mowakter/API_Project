@@ -33,7 +33,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: CustomText(text: "Product List", fSize: 20),
+        title: CustomText(text: "Product List - ${myProduct.length}", fSize: 20),
         centerTitle: true,
       ),
       body: myProduct.length == 0
