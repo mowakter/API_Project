@@ -20,10 +20,13 @@ class _NotePracticeState extends State<NotePractice> {
           }, child: Text("Get Note")),
           ElevatedButton(onPressed: (){
             NoteService().getNoteDetailsDAta();
-
           }, child: Text("Note Details")),
-          ElevatedButton(onPressed: (){}, child: Text("Note Add")),
-          ElevatedButton(onPressed: (){}, child: Text("Note Delete")),
+          ElevatedButton(onPressed: (){
+            NoteService().createNoteData();
+          }, child: Text("Note Add")),
+          ElevatedButton(onPressed: (){
+            NoteService().getNoteDeleteDAta();
+          }, child: Text("Note Delete")),
         ],
       ),
 
