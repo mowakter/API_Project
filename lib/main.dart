@@ -2,6 +2,7 @@ import 'package:api_project/view/book.dart';
 import 'package:api_project/view/countries.dart';
 import 'package:api_project/view/home.dart';
 import 'package:api_project/view/note.dart';
+import 'package:api_project/view/note/note_list.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NotePractice(),
+      home: NoteListScreen(),
     ) ;
   }
 }
