@@ -16,6 +16,7 @@ class NoteService {
 
   getNoteDetailsDAta() async {
     Uri url = Uri.parse("https://b5.dokanibahe.com/api/v1/notes/6");
+    // Uri url = Uri.parse("https://b5.dokanibahe.com/api/v1/notes/6");
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
