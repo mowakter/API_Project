@@ -46,6 +46,7 @@ class NoteService {
         "content-Type": "application/json",
       },
       body: jsonEncode({"title":"ABC","details" : "XYZ"}),
+      // body: jsonEncode({"title":"ABC","details" : "XYZ"}),
     );
     if (res.statusCode == 201) {
       log("Note Create Successfully");
